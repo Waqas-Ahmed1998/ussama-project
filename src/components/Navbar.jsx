@@ -22,7 +22,6 @@ const Navbar = function () {
         <div>
           <h1 className='logo'>UI-Project</h1>
         </div>
-
         <div id='manueItems' className='manueItemss'>
           <ul className='linkItems'>
             <li>
@@ -43,14 +42,10 @@ const Navbar = function () {
               <a href='#Offer'>Book a Flight</a>
             </li>
           </ul>
-        </div>
-        <div className='lastButton'>
-          {' '}
-          <li className=''>
-            <a href=''> Test test</a>
-          </li>
-        </div>
-
+        </div>{' '}
+        <li className='lastButton'>
+          <a href=''> Test test</a>
+        </li>
         <div className='manue'>
           <motion.p whileTap={{ scale: 1.2 }} onClick={setClass}>
             {effect ? (

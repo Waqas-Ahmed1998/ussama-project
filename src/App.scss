@@ -64,6 +64,7 @@ li {
 
   .lastButton {
     background-color: #f4a261;
+
     color: white;
     border-radius: 30px;
     padding: 0.3rem 0.4rem;
@@ -72,9 +73,9 @@ li {
       color: white;
     }
   }
-  .lastbutton:hover {
+  .lastButton:hover {
     background-color: #0077b6;
-    transition: 0.3s ease-in-out;
+    transition: 0.2s ease-in-out;
     color: black;
   }
   .manue {
@@ -173,7 +174,7 @@ li {
     }
     .landingBtn:hover {
       background-color: #0077b6;
-      transition: 0.3s ease-in-out;
+      transition: 0.2s ease-in-out;
     }
   }
 }
