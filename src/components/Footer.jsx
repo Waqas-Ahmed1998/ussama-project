@@ -7,12 +7,12 @@ const Footer = function () {
     threshold: 0.25,
     // unobserveOnEnter: true,
   });
-
+  if (inView) document.getElementById('footer').classList.remove('active');
   useEffect(() => {}, [inView]);
 
   return (
-    <section className='footer'>
-      <div ref={observe} className='container'>
+    <section ref={observe} id='footer' className='footer active'>
+      <div className='container'>
         <div className='grid'>
           <motion.div
             className='logo-content'

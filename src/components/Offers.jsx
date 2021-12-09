@@ -5,13 +5,12 @@ import { motion } from 'framer-motion';
 const Offers = function () {
   const { observe, inView, scrollDirection } = useInView({
     threshold: 0.25,
-    // unobserveOnEnter: true,
   });
-
+  if (inView) document.getElementById('Offer').classList.remove('active');
   useEffect(() => {}, [inView]);
 
   return (
-    <section id='Offer' className='offers'>
+    <section id='Offer' className='offers active'>
       <div ref={observe} className='container'>
         <div className='content'>
           <motion.h1
@@ -40,5 +39,13 @@ const Offers = function () {
     </section>
   );
 };
-
+// <motion.div
+// className='input'
+// animate={inView ? { y: [100, 0], opacity: [0, 1] } : {}}
+// transition={{ duration: 0.5 }}
+// >
+// {' '}
+// <input type='text' placeholder='Enter you email' />
+// <a href='hello'>Sign Up</a>
+// </motion.div>
 export default Offers;

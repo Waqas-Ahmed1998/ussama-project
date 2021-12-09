@@ -14,13 +14,12 @@ import {
 const Why = function () {
   const { observe, inView, scrollDirection } = useInView({
     threshold: 0.25,
-    // unobserveOnEnter: true,
   });
-
+  if (inView) document.getElementById('why').classList.remove('active');
   useEffect(() => {}, [inView]);
 
   return (
-    <section id='why' className='why '>
+    <section id='why' className='why active'>
       <div ref={observe} className='container'>
         <motion.h1
           className='heading'

@@ -2,26 +2,21 @@ import { useState, useEffect } from 'react';
 import useInView from 'react-cool-inview';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faCheck,
-  faCheckCircle,
-  faLightbulb,
-  faUserCheck,
-} from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 const Testimonials = function () {
   const { observe, inView, scrollDirection } = useInView({
     threshold: 0.25,
     // unobserveOnEnter: true,
   });
-
+  if (inView) document.getElementById('about').classList.remove('active');
   useEffect(() => {}, [inView]);
 
   return (
-    <section id='about' className='testimonials container'>
+    <section ref={observe} id='about' className='testimonials container active'>
       <motion.div
         className='heading'
         animate={inView ? { x: [-100, 0], opacity: [0, 1] } : {}}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.4 }}
       >
         <p>Testimonials</p>
         <h2>What people are saying </h2>
@@ -29,10 +24,9 @@ const Testimonials = function () {
       <div className='grid'>
         <div className='content'>
           <motion.div
-            ref={observe}
             className=''
             animate={inView ? { x: [-100, 0], opacity: [0, 1] } : {}}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
           >
             {' '}
             <FontAwesomeIcon

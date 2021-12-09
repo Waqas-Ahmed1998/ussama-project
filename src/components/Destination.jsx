@@ -7,15 +7,20 @@ const Destination = function () {
     threshold: 0.25,
     // unobserveOnEnter: true,
   });
+  if (inView)
+    document.getElementById('destinations').classList.remove('active');
 
   useEffect(() => {}, [inView]);
 
   return (
-    <section id='destinations' className='destinations container'>
+    <section
+      ref={observe}
+      id='destinations'
+      className='destinations container active'
+    >
       <h1 className='dest-Heading'>View Destinations</h1>
       <div className=' grid'>
         <motion.div
-          ref={observe}
           className='locations loc-1'
           animate={inView ? { y: [-100, 0], opacity: [0, 1] } : {}}
         >
@@ -28,7 +33,6 @@ const Destination = function () {
           </div>
         </motion.div>
         <motion.div
-          ref={observe}
           className='locations loc-2'
           animate={inView ? { y: [-100, 0], opacity: [0, 1] } : {}}
         >
@@ -41,7 +45,6 @@ const Destination = function () {
           </div>
         </motion.div>
         <motion.div
-          ref={observe}
           className='locations loc-3'
           animate={inView ? { y: [-100, 0], opacity: [0, 1] } : {}}
         >
@@ -54,7 +57,6 @@ const Destination = function () {
           </div>
         </motion.div>
         <motion.div
-          ref={observe}
           className='locations loc-4'
           animate={inView ? { y: [-100, 0], opacity: [0, 1] } : {}}
         >
