@@ -62,14 +62,19 @@ const Testimonials = function () {
             </p>
           </motion.div>
         </div>
-        <motion.div
-          className='image pic1'
-          animate={inView ? { y: [-100, 0], opacity: [0, 1] } : {}}
-        ></motion.div>
-        <motion.div
-          className='image pic2'
-          animate={inView ? { y: [-100, 0], opacity: [0, 1] } : {}}
-        ></motion.div>
+        <div className='imagePart'>
+          {' '}
+          <motion.div
+            className='image pic1'
+            animate={inView ? { y: [-100, 0], opacity: [0, 1] } : {}}
+            transition={{ duration: 0.6 }}
+          ></motion.div>
+          <motion.div
+            className='image pic2'
+            animate={inView ? { y: [-100, 0], opacity: [0, 1] } : {}}
+            transition={{ duration: 0.8 }}
+          ></motion.div>
+        </div>
       </div>
     </section>
   );

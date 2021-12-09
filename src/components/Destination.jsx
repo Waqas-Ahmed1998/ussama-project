@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const Destination = function () {
   const { observe, inView, scrollDirection } = useInView({
-    threshold: 0.25,
+    threshold: 0.1,
     // unobserveOnEnter: true,
   });
   if (inView)

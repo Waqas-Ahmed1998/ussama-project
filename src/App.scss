@@ -291,7 +291,7 @@ li {
     height: 580px;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1024px) {
   .destinations {
     .dest-Heading {
       font-size: 2rem;
@@ -306,6 +306,7 @@ li {
     }
   }
 }
+
 @media only screen and (max-width: 599px) {
   .destinations {
     .dest-Heading {
@@ -321,22 +322,23 @@ li {
     }
     .loc-1 {
       background-image: url(./public/dest1.jpg);
-      height: 500px;
+      height: 515px;
     }
     .loc-2 {
       background-image: url(./public/dest2.jpg);
-      height: 500px;
+      height: 515px;
     }
     .loc-3 {
       background-image: url(./public/dest3.jpg);
-      height: 500px;
+      height: 515px;
     }
     .loc-4 {
       background-image: url(./public/dest4.jpg);
-      height: 500px;
+      height: 515px;
     }
   }
 }
+
 // ********Testimonials
 
 .testimonials {
@@ -350,7 +352,7 @@ li {
   }
   .grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 1.5fr 2fr;
     grid-gap: 0.5rem;
     height: 500px;
     .content {
@@ -365,10 +367,19 @@ li {
         letter-spacing: 1px;
       }
     }
-    .image {
-      padding: 4rem;
-      border-radius: 10px;
+    .imagePart {
+      display: flex;
+      gap: 0.2rem;
+      .image {
+        flex: 1;
+        padding: 4rem;
+        border-radius: 10px;
+      }
     }
+    // .image {
+    //   padding: 4rem;
+    //   border-radius: 10px;
+    // }
     .pic1 {
       background-image: url(./public/person1.jpg);
       background-size: cover;
@@ -380,6 +391,43 @@ li {
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+    }
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .container {
+    max-width: 90%;
+    margin: auto;
+  }
+  .testimonials {
+    padding: 1rem 0.2rem;
+    .heading {
+      p {
+        color: skyblue;
+        font-style: 1.2rem;
+        font-weight: 700;
+      }
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 1rem;
+      height: fit-content;
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+      }
+      .imagePart {
+        display: flex;
+        gap: 0.8rem;
+        .image {
+          flex: 1;
+          padding: 8rem;
+          border-radius: 10px;
+        }
+      }
     }
   }
 }
@@ -408,9 +456,14 @@ li {
         justify-content: center;
         padding: 0;
       }
-      .image {
-        padding: 8rem;
-        border-radius: 10px;
+      .imagePart {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        .image {
+          padding: 9rem;
+          border-radius: 10px;
+        }
       }
     }
   }
@@ -428,6 +481,27 @@ li {
   }
   .card {
     padding: 2rem;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .why {
+    padding: 0.5rem;
+    .heading {
+      font-size: 2rem;
+      margin-bottom: 5rem;
+      .container {
+        max-width: 90%;
+        margin: auto;
+      }
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 2rem;
+    }
+    .card {
+      padding: 0.5rem;
+    }
   }
 }
 @media only screen and (max-width: 600px) {
@@ -516,6 +590,69 @@ li {
   background-color: rgba(63, 62, 62, 0.4);
   // z-index: 1;
   border-radius: 10px;
+}
+@media only screen and (max-width: 1024px) {
+  .offers {
+    position: relative;
+    height: 70vh;
+    padding: 1rem;
+    background-image: url(./public/dest3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    .container {
+      height: 100%;
+      max-width: 100%;
+    }
+    .content {
+      position: relative;
+      height: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+      h1 {
+        font-size: 3.2rem;
+        color: #f6f6f6;
+        margin-bottom: 0.2rem;
+      }
+      h2 {
+        color: lightgray;
+        font-size: 1.8rem;
+        margin-top: 0.4rem;
+      }
+      .input {
+        position: absolute;
+        bottom: 20%;
+
+        a {
+          display: inline-block;
+          color: white;
+
+          margin-top: 1rem;
+          margin-left: 0.5rem;
+
+          padding: 0.6rem 2rem;
+          border-radius: 30px;
+          background-color: rgb(204, 116, 15);
+        }
+        a:hover {
+          transform: scale(1.5);
+          background-color: skyblue;
+          transition: 0.2s ease-in-out;
+          color: black;
+        }
+      }
+      input {
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 20px;
+        border: none;
+        width: 90%;
+      }
+    }
+  }
 }
 @media only screen and (max-width: 600px) {
   .offers {
@@ -606,6 +743,11 @@ li {
         font-weight: bold;
       }
     }
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .footer {
+    padding: 1.5rem 0.5rem;
   }
 }
 @media only screen and (max-width: 600px) {
