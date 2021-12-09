@@ -1,11 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import useInView from 'react-cool-inview';
 import { motion } from 'framer-motion';
 
 const Footer = function () {
   const { observe, inView, scrollDirection } = useInView({
     threshold: 0.25,
-    // unobserveOnEnter: true,
   });
   if (inView) document.getElementById('footer').classList.remove('active');
   useEffect(() => {}, [inView]);
